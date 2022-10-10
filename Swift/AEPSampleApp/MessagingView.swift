@@ -9,6 +9,7 @@
 
 import UIKit
 import SwiftUI
+import ActivityKit
 
 import AEPCore
 import AEPEdge
@@ -20,6 +21,7 @@ class MessagingViewController: UIHostingController<MessagingView> {}
 
 struct MessagingView: View {
     @State private var ecidState:String = ""
+    @State var  activities = Activity<InnovationAttributes>.activities
 
     let LOG_PREFIX = "MessagingViewController"
     
@@ -46,6 +48,17 @@ struct MessagingView: View {
                 }
                 Button("Sample notification with custom actions") {
                     scheduleNotificationWithCustomAction()
+                }
+                Spacer(minLength: 15)
+            }
+            VStack(alignment: .leading, spacing: 12) {
+                Text("Live Activities").font(.title).bold()
+                Text("Click a button below to start a live activity:")
+                Button("Start Live Activity") {
+                    startLiveActivity()
+                }
+                Button("End Live Activity") {
+                    endLiveActivity()
                 }
                 Spacer(minLength: 15)
             }
@@ -109,6 +122,27 @@ struct MessagingView: View {
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
         let notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.add(request, withCompletionHandler: handleNotificationError(_:))
+    }
+    
+    func startLiveActivity() {
+        let future = Calendar.current.date(byAdding: .minute, value: (Int("3") ?? 0), to: Date())!
+        let date = Date.now...future
+        let initialContentState = InnovationAttributes.ContentState(driverName: "Bill James", deliveryTimer:date)
+        let activityAttributes = InnovationAttributes(numberOfPizzas: 3, totalAmount: "$42.00", orderNumber: "12345")
+
+        do {
+            let deliveryActivity = try Activity.request(attributes: activityAttributes, contentState: initialContentState)
+            activities = Activity<InnovationAttributes>.activities
+            print("Requested a pizza delivery Live Activity \(String(describing: deliveryActivity.id)).")
+        } catch (let error) {
+            print("Error requesting pizza delivery Live Activity \(error.localizedDescription).")
+        }
+    }
+    
+    func endLiveActivity() {
+        Task {
+            await activities.first?.end(dismissalPolicy: .immediate)
+        }
     }
     
     func scheduleNotificationWithCustomAction() {
