@@ -20,6 +20,16 @@
 		782B982D24D9BA8C009C5902 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 782B982B24D9BA8C009C5902 /* LaunchScreen.storyboard */; };
 		7876121124DC601B001CABB5 /* AssuranceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876121024DC601B001CABB5 /* AssuranceView.swift */; };
 		92430A95263B28D7004FBDCC /* MessagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92430A94263B28D7004FBDCC /* MessagingView.swift */; };
+		B80625CC28F48242005A8326 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B80625CB28F48242005A8326 /* WidgetKit.framework */; };
+		B80625CE28F48242005A8326 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B80625CD28F48242005A8326 /* SwiftUI.framework */; };
+		B80625D128F48243005A8326 /* InnovationBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80625D028F48243005A8326 /* InnovationBundle.swift */; };
+		B80625D328F48243005A8326 /* InnovationLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80625D228F48243005A8326 /* InnovationLiveActivity.swift */; };
+		B80625D528F48243005A8326 /* Innovation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80625D428F48243005A8326 /* Innovation.swift */; };
+		B80625D828F48247005A8326 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B80625D728F48247005A8326 /* Assets.xcassets */; };
+		B80625DA28F48247005A8326 /* Innovation.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = B80625D628F48243005A8326 /* Innovation.intentdefinition */; };
+		B80625DB28F48247005A8326 /* Innovation.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = B80625D628F48243005A8326 /* Innovation.intentdefinition */; };
+		B80625DE28F48247005A8326 /* InnovationExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B80625CA28F48242005A8326 /* InnovationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B80625E628F48F6F005A8326 /* ActivityKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B80625E528F48F6F005A8326 /* ActivityKit.framework */; };
 		C8B33871281A7FF500D64F14 /* OptimizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B33870281A7FF500D64F14 /* OptimizeView.swift */; };
 		D42BE5C32524569C00782C3C /* EdgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42BE5C22524569C00782C3C /* EdgeView.swift */; };
 		D4E2FDB2252554E6001FE22D /* Purchases.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E2FD8E252554E6001FE22D /* Purchases.swift */; };
@@ -41,6 +51,30 @@
 		E85CDFD29B450F16196D4F79 /* Pods_AEPSampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D94C7204C94E9F5D9F472F31 /* Pods_AEPSampleApp.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		B8C9E60F28F4946F00398801 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 782B981524D9BA89009C5902 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B80625C928F48242005A8326;
+			remoteInfo = InnovationExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B80625E228F48248005A8326 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B80625DE28F48247005A8326 /* InnovationExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		218306A62612336900889569 /* ConsentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentView.swift; sourceTree = "<group>"; };
 		218306A926123A3B00889569 /* EdgeIdentityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeIdentityView.swift; sourceTree = "<group>"; };
@@ -60,6 +94,16 @@
 		7876121024DC601B001CABB5 /* AssuranceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssuranceView.swift; sourceTree = "<group>"; };
 		92430A90263B2340004FBDCC /* AEPSampleApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AEPSampleApp.entitlements; sourceTree = "<group>"; };
 		92430A94263B28D7004FBDCC /* MessagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingView.swift; sourceTree = "<group>"; };
+		B80625CA28F48242005A8326 /* InnovationExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = InnovationExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B80625CB28F48242005A8326 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		B80625CD28F48242005A8326 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		B80625D028F48243005A8326 /* InnovationBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnovationBundle.swift; sourceTree = "<group>"; };
+		B80625D228F48243005A8326 /* InnovationLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnovationLiveActivity.swift; sourceTree = "<group>"; };
+		B80625D428F48243005A8326 /* Innovation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Innovation.swift; sourceTree = "<group>"; };
+		B80625D628F48243005A8326 /* Innovation.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Innovation.intentdefinition; sourceTree = "<group>"; };
+		B80625D728F48247005A8326 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B80625D928F48247005A8326 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B80625E528F48F6F005A8326 /* ActivityKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ActivityKit.framework; path = System/Library/Frameworks/ActivityKit.framework; sourceTree = SDKROOT; };
 		C8B33870281A7FF500D64F14 /* OptimizeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptimizeView.swift; sourceTree = "<group>"; };
 		D42BE5C22524569C00782C3C /* EdgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeView.swift; sourceTree = "<group>"; };
 		D4E2FD8E252554E6001FE22D /* Purchases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Purchases.swift; path = xdmlib/Purchases.swift; sourceTree = "<group>"; };
@@ -86,7 +130,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B80625E628F48F6F005A8326 /* ActivityKit.framework in Frameworks */,
 				E85CDFD29B450F16196D4F79 /* Pods_AEPSampleApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B80625C728F48242005A8326 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B80625CE28F48242005A8326 /* SwiftUI.framework in Frameworks */,
+				B80625CC28F48242005A8326 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				782B981F24D9BA89009C5902 /* AEPSampleApp */,
+				B80625CF28F48243005A8326 /* Innovation */,
 				782B981E24D9BA89009C5902 /* Products */,
 				BA1914BEDC677F1A6C7BE14E /* Pods */,
 				AD49D2DD097EA82A906007CE /* Frameworks */,
@@ -107,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				782B981D24D9BA89009C5902 /* AEPSampleApp.app */,
+				B80625CA28F48242005A8326 /* InnovationExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,9 +195,25 @@
 		AD49D2DD097EA82A906007CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B80625E528F48F6F005A8326 /* ActivityKit.framework */,
 				D94C7204C94E9F5D9F472F31 /* Pods_AEPSampleApp.framework */,
+				B80625CB28F48242005A8326 /* WidgetKit.framework */,
+				B80625CD28F48242005A8326 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B80625CF28F48243005A8326 /* Innovation */ = {
+			isa = PBXGroup;
+			children = (
+				B80625D028F48243005A8326 /* InnovationBundle.swift */,
+				B80625D228F48243005A8326 /* InnovationLiveActivity.swift */,
+				B80625D428F48243005A8326 /* Innovation.swift */,
+				B80625D628F48243005A8326 /* Innovation.intentdefinition */,
+				B80625D728F48247005A8326 /* Assets.xcassets */,
+				B80625D928F48247005A8326 /* Info.plist */,
+			);
+			path = Innovation;
 			sourceTree = "<group>";
 		};
 		BA1914BEDC677F1A6C7BE14E /* Pods */ = {
@@ -188,15 +260,34 @@
 				782B981A24D9BA89009C5902 /* Frameworks */,
 				782B981B24D9BA89009C5902 /* Resources */,
 				B806B0D52AE233B98467149D /* [CP] Embed Pods Frameworks */,
+				B80625E228F48248005A8326 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B8C9E61028F4946F00398801 /* PBXTargetDependency */,
 			);
 			name = AEPSampleApp;
 			productName = AEPSampleApp;
 			productReference = 782B981D24D9BA89009C5902 /* AEPSampleApp.app */;
 			productType = "com.apple.product-type.application";
+		};
+		B80625C928F48242005A8326 /* InnovationExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B80625DF28F48248005A8326 /* Build configuration list for PBXNativeTarget "InnovationExtension" */;
+			buildPhases = (
+				B80625C628F48242005A8326 /* Sources */,
+				B80625C728F48242005A8326 /* Frameworks */,
+				B80625C828F48242005A8326 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = InnovationExtension;
+			productName = InnovationExtension;
+			productReference = B80625CA28F48242005A8326 /* InnovationExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -204,12 +295,15 @@
 		782B981524D9BA89009C5902 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
+				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Christopher Hoffman";
 				TargetAttributes = {
 					782B981C24D9BA89009C5902 = {
 						CreatedOnToolsVersion = 11.3;
+					};
+					B80625C928F48242005A8326 = {
+						CreatedOnToolsVersion = 14.1;
 					};
 				};
 			};
@@ -227,6 +321,7 @@
 			projectRoot = "";
 			targets = (
 				782B981C24D9BA89009C5902 /* AEPSampleApp */,
+				B80625C928F48242005A8326 /* InnovationExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -239,6 +334,14 @@
 				411747AC27ACB1DE0025F55A /* Adobe_Experience_Platform_logo_256px.png in Resources */,
 				782B982D24D9BA8C009C5902 /* LaunchScreen.storyboard in Resources */,
 				782B982A24D9BA8C009C5902 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B80625C828F48242005A8326 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B80625D828F48247005A8326 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +404,7 @@
 				C8B33871281A7FF500D64F14 /* OptimizeView.swift in Sources */,
 				D4E2FDD5252554E6001FE22D /* ProductListViews.swift in Sources */,
 				D4E2FDC2252554E6001FE22D /* ProductListItemsItem.swift in Sources */,
+				B80625DB28F48247005A8326 /* Innovation.intentdefinition in Sources */,
 				D4E2FDC9252554E6001FE22D /* ProductViews.swift in Sources */,
 				D4E2FDB9252554E6001FE22D /* ProductListOpens.swift in Sources */,
 				D4E2FDCD252554E6001FE22D /* CartAbandons.swift in Sources */,
@@ -322,7 +426,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B80625C628F48242005A8326 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B80625D128F48243005A8326 /* InnovationBundle.swift in Sources */,
+				B80625DA28F48247005A8326 /* Innovation.intentdefinition in Sources */,
+				B80625D528F48243005A8326 /* Innovation.swift in Sources */,
+				B80625D328F48243005A8326 /* InnovationLiveActivity.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B8C9E61028F4946F00398801 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B80625C928F48242005A8326 /* InnovationExtension */;
+			targetProxy = B8C9E60F28F4946F00398801 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		782B982B24D9BA8C009C5902 /* LaunchScreen.storyboard */ = {
@@ -454,12 +577,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 30701321116461F390347F6A /* Pods-AEPSampleApp.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AEPSampleApp/AEPSampleApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = FKGEE875K4;
 				INFOPLIST_FILE = AEPSampleApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -475,18 +599,79 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3978EDF8C1A4AFB0B6F07ED8 /* Pods-AEPSampleApp.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AEPSampleApp/AEPSampleApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = FKGEE875K4;
 				INFOPLIST_FILE = AEPSampleApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.adobe.AEPSampleApplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B80625E028F48248005A8326 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FKGEE875K4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Innovation/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Innovation;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Christopher Hoffman. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adobe.AEPSampleApplication.Innovation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B80625E128F48248005A8326 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FKGEE875K4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Innovation/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Innovation;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Christopher Hoffman. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adobe.AEPSampleApplication.Innovation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -509,6 +694,15 @@
 			buildConfigurations = (
 				782B984824D9BA8C009C5902 /* Debug */,
 				782B984924D9BA8C009C5902 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B80625DF28F48248005A8326 /* Build configuration list for PBXNativeTarget "InnovationExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B80625E028F48248005A8326 /* Debug */,
+				B80625E128F48248005A8326 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

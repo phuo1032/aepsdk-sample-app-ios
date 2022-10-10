@@ -129,22 +129,22 @@ struct EdgeIdentityView: View {
                     }
                 }
                 
-                VStack(alignment: .leading, spacing: 12) {
-                    
-                    Text("Get URLVariables:")
-                    Button(action: {
-                        self.urlVariablesText = ""
-
-                        AEPEdgeIdentity.Identity.getUrlVariables { urlVariablesString, _ in
-                            self.urlVariablesText = urlVariablesString ?? "URLVariables not generated"
-                        }
-                        
-                    }) {
-                        Text("Get URLVariables")
-                    }.buttonStyle(CustomButtonStyle())
-                    
-                    Text(urlVariablesText)
-                }
+//                VStack(alignment: .leading, spacing: 12) {
+//                    
+//                    Text("Get URLVariables:")
+//                    Button(action: {
+//                        self.urlVariablesText = ""
+//
+//                        AEPEdgeIdentity.Identity.getUrlVariables { urlVariablesString, _ in
+//                            self.urlVariablesText = urlVariablesString ?? "URLVariables not generated"
+//                        }
+//                        
+//                    }) {
+//                        Text("Get URLVariables")
+//                    }.buttonStyle(CustomButtonStyle())
+//                    
+//                    Text(urlVariablesText)
+//                }
             }.padding()
         }
     }

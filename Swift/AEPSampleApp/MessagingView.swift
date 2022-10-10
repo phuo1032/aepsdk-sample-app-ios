@@ -9,6 +9,7 @@
 
 import UIKit
 import SwiftUI
+import ActivityKit
 
 import AEPCore
 import AEPEdge
@@ -46,6 +47,9 @@ struct MessagingView: View {
                 }
                 Button("Sample notification with custom actions") {
                     scheduleNotificationWithCustomAction()
+                }
+                Button("Start Live Activity") {
+                    startLiveActivity()
                 }
                 Spacer(minLength: 15)
             }
@@ -109,6 +113,21 @@ struct MessagingView: View {
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
         let notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.add(request, withCompletionHandler: handleNotificationError(_:))
+    }
+    
+    func startLiveActivity() {
+        var future = Calendar.current.date(byAdding: .minute, value: (Int(minutes) ?? 0), to: Date())!
+        future = Calendar.current.date(byAdding: .second, value: (Int(seconds) ?? 0), to: future)!
+        let date = Date.now...future
+        let initialContentState = InnovationAttributes.ContentState(driverName: "Bill James", deliveryTimer:date)
+        let activityAttributes = InnovationAttributes(numberOfPizzas: 3, totalAmount: "$42.00", orderNumber: "12345")
+
+        do {
+            deliveryActivity = try Activity.request(attributes: activityAttributes, contentState: initialContentState)
+            print("Requested a pizza delivery Live Activity \(String(describing: deliveryActivity?.id)).")
+        } catch (let error) {
+            print("Error requesting pizza delivery Live Activity \(error.localizedDescription).")
+        }
     }
     
     func scheduleNotificationWithCustomAction() {
