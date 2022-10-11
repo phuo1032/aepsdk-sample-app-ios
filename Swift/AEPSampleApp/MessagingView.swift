@@ -134,6 +134,12 @@ struct MessagingView: View {
             let deliveryActivity = try Activity.request(attributes: activityAttributes, contentState: initialContentState)
             activities = Activity<InnovationAttributes>.activities
             print("Requested a pizza delivery Live Activity \(String(describing: deliveryActivity.id)).")
+            Task {
+               for await data in deliveryActivity.pushTokenUpdates {
+                  let myToken = data.map {String(format: "%02x", $0)}.joined()
+                  print("Received Push Token \(String(describing: myToken))")
+               }
+            }
         } catch (let error) {
             print("Error requesting pizza delivery Live Activity \(error.localizedDescription).")
         }
