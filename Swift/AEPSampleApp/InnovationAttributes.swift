@@ -14,7 +14,8 @@ struct InnovationAttributes: ActivityAttributes {
 
     public struct ContentState: Codable, Hashable {
         var driverName: String
-        var deliveryTimer: ClosedRange<Date>
+//        var deliveryTimer: ClosedRange<Date>
+        var deliveryTimer: Double
     }
 
     var numberOfPizzas: Int
