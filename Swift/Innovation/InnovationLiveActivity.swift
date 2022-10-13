@@ -22,15 +22,14 @@ struct InnovationLiveActivity: Widget {
             DynamicIsland {
                 // Create the expanded view.
                 DynamicIslandExpandedRegion(.leading) {
-                    Label("\(context.attributes.numberOfPizzas) Pizzas", systemImage: "bag")
+                    Label("\(context.attributes.totalLap) Pizzas", systemImage: "bag")
                         .foregroundColor(.indigo)
                         .font(.title2)
                 }
                 
                 DynamicIslandExpandedRegion(.trailing) {
                     Label {
-//                        Text(timerInterval: context.state.deliveryTimer, countsDown: true)
-                        Text(Date().addingTimeInterval(context.state.deliveryTimer), style: .timer)
+                        Text(Date().addingTimeInterval(context.state.currentLap), style: .timer)
                             .multilineTextAlignment(.trailing)
                             .frame(width: 50)
                             .monospacedDigit()
@@ -57,23 +56,21 @@ struct InnovationLiveActivity: Widget {
                 }
             } compactLeading: {
                 Label {
-                    Text("\(context.attributes.numberOfPizzas) Pizzas")
+                    Text("\(context.attributes.totalLap) Pizzas")
                 } icon: {
                     Image(systemName: "bag")
                         .foregroundColor(.indigo)
                 }
                 .font(.caption2)
             } compactTrailing: {
-//                Text(timerInterval: context.state.deliveryTimer, countsDown: true)
-                Text(Date().addingTimeInterval(context.state.deliveryTimer), style: .timer)
+                Text(Date().addingTimeInterval(context.state.currentLap), style: .timer)
                     .multilineTextAlignment(.center)
                     .frame(width: 40)
                     .font(.caption2)
             } minimal: {
                 VStack(alignment: .center) {
                     Image(systemName: "timer")
-//                    Text(timerInterval: context.state.deliveryTimer, countsDown: true)
-                    Text(Date().addingTimeInterval(context.state.deliveryTimer), style: .timer)
+                    Text(Date().addingTimeInterval(context.state.currentLap), style: .timer)
                         .multilineTextAlignment(.center)
                         .monospacedDigit()
                         .font(.caption2)
@@ -87,38 +84,46 @@ struct InnovationLiveActivity: Widget {
 
 struct LockScreenLiveActivityView: View {
     let context: ActivityViewContext<InnovationAttributes>
-    
+
     var body: some View {
-        VStack {
-            Spacer()
-            Text("\(context.state.driverName) is on their way with your pizza!")
-            Spacer()
+
+        VStack(alignment: .leading) {
             HStack {
-                Spacer()
-                Label {
-                    Text("\(context.attributes.numberOfPizzas) Pizzas")
-                } icon: {
-                    Image(systemName: "bag")
-                        .foregroundColor(.indigo)
+                VStack(alignment: .center) {
+                    if (context.state.currentLap > context.attributes.totalLap) {
+                        Text("Race Complete").font(.headline)
+                        Spacer()
+                        Text(context.state.driverName + " won!!!").font(.headline)
+                    } else {
+                        Text("Race Started!").font(.headline)
+                        Spacer()
+                        ProgressView("Current Lap: \(Int(context.state.currentLap))/\(Int(context.attributes.totalLap))", value: context.state.currentLap, total: context.attributes.totalLap).font(.subheadline)
+                        Spacer()
+                        Text(context.state.driverName + " is currently first!").font(.headline)
+
+                    }
                 }
-                .font(.title2)
-                Spacer()
-                Label {
-//                    Text(timerInterval: context.state.deliveryTimer, countsDown: true)
-                    Text(Date().addingTimeInterval(context.state.deliveryTimer), style: .timer)
-                        .multilineTextAlignment(.center)
-                        .frame(width: 50)
-                        .monospacedDigit()
-                } icon: {
-                    Image(systemName: "timer")
-                        .foregroundColor(.indigo)
-                }
-                .font(.title2)
-                Spacer()
             }
-            Spacer()
+        }.padding(15)
+    }
+}
+
+struct BottomLineView: View {
+    var time: Double
+    var body: some View {
+        HStack {
+            Divider().frame(width: 50,
+                            height: 10)
+            .overlay(.gray).cornerRadius(5)
+            Image("delivery")
+            VStack {
+                RoundedRectangle(cornerRadius: 5)
+                    .stroke(style: StrokeStyle(lineWidth: 1,
+                                               dash: [4]))
+                    .frame(height: 10)
+                    .overlay(Text(Date().addingTimeInterval(time), style: .timer).font(.system(size: 8)).multilineTextAlignment(.center))
+            }
+            Image("home-address")
         }
-        .activitySystemActionForegroundColor(.indigo)
-        .activityBackgroundTint(.cyan)
     }
 }

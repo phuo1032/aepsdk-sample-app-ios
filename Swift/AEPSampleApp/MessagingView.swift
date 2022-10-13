@@ -57,9 +57,6 @@ struct MessagingView: View {
                 Button("Start Live Activity") {
                     startLiveActivity()
                 }
-                Button("Update Live Activity") {
-                    updateLiveActivity()
-                }
                 Button("End Live Activity") {
                     endLiveActivity()
                 }
@@ -128,11 +125,8 @@ struct MessagingView: View {
     }
     
     func startLiveActivity() {
-        let future = Calendar.current.date(byAdding: .minute, value: (Int("3") ?? 0), to: Date())!
-        let date = Date.now...future
-//        let initialContentState = InnovationAttributes.ContentState(driverName: "Bill James", deliveryTimer:date)
-        let initialContentState = InnovationAttributes.ContentState(driverName: "Peiying", deliveryTimer: 300)
-        let activityAttributes = InnovationAttributes(numberOfPizzas: 3, totalAmount: "$42.00", orderNumber: "12345")
+        let initialContentState = InnovationAttributes.ContentState(driverName: "Peiying", currentLap: 1)
+        let activityAttributes = InnovationAttributes(totalLap: 10)
 
         do {
             let deliveryActivity = try Activity.request(attributes: activityAttributes, contentState: initialContentState, pushType: .token)
@@ -146,16 +140,6 @@ struct MessagingView: View {
             }
         } catch (let error) {
             print("Error requesting pizza delivery Live Activity \(error.localizedDescription).")
-        }
-    }
-    
-    func updateLiveActivity() {
-        let future = Calendar.current.date(byAdding: .minute, value: (Int("3") ?? 0), to: Date())!
-        let date = Date.now...future
-//        let updateStatus = InnovationAttributes.ContentState(driverName: "William", deliveryTimer: date)
-        let updateStatus = InnovationAttributes.ContentState(driverName: "William", deliveryTimer: 500)
-        Task {
-            await activities.first?.update(using: updateStatus)
         }
     }
     

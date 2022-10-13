@@ -10,15 +10,11 @@ import SwiftUI
 import ActivityKit
 
 struct InnovationAttributes: ActivityAttributes {
-    public typealias PizzaDeliveryStatus = ContentState
+    public typealias RaceStatus = ContentState
 
     public struct ContentState: Codable, Hashable {
         var driverName: String
-//        var deliveryTimer: ClosedRange<Date>
-        var deliveryTimer: Double
+        var currentLap: Double
     }
-
-    var numberOfPizzas: Int
-    var totalAmount: String
-    var orderNumber: String
+    var totalLap: Double
 }
