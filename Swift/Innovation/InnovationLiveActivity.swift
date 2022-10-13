@@ -22,58 +22,57 @@ struct InnovationLiveActivity: Widget {
             DynamicIsland {
                 // Create the expanded view.
                 DynamicIslandExpandedRegion(.leading) {
-                    Label("\(context.attributes.totalLap) Pizzas", systemImage: "bag")
-                        .foregroundColor(.indigo)
+                    Label("\(context.state.driverName)", systemImage: "1.circle")
                         .font(.title2)
                 }
                 
                 DynamicIslandExpandedRegion(.trailing) {
                     Label {
-                        Text(Date().addingTimeInterval(context.state.currentLap), style: .timer)
+                        Text("\(Int(context.state.currentLap))/\(Int(context.attributes.totalLap))")
                             .multilineTextAlignment(.trailing)
                             .frame(width: 50)
                             .monospacedDigit()
                     } icon: {
-                        Image(systemName: "timer")
-                            .foregroundColor(.indigo)
+                        Image(systemName: "flag.checkered")
                     }
                     .font(.title2)
                 }
                 
                 DynamicIslandExpandedRegion(.center) {
-                    Text("\(context.state.driverName) is on their way!")
+                    Text("\(context.state.driverName) is first!")
                         .lineLimit(1)
-                        .font(.caption)
+                        .font(.headline)
                 }
                 
                 DynamicIslandExpandedRegion(.bottom) {
-                    Button {
-                        // Deep link into your app.
-                    } label: {
-                        Label("Call driver", systemImage: "phone")
-                    }
-                    .foregroundColor(.indigo)
+//                    Button {
+//                        // Deep link into your app.
+//                    } label: {
+//                        Label("Call driver", systemImage: "phone")
+//                    }
+//                    .foregroundColor(.indigo)
                 }
             } compactLeading: {
                 Label {
-                    Text("\(context.attributes.totalLap) Pizzas")
+                    Text("\(context.state.driverName)")
                 } icon: {
-                    Image(systemName: "bag")
-                        .foregroundColor(.indigo)
+                    Image(systemName: "1.circle")
+                        .foregroundColor(.red)
                 }
                 .font(.caption2)
             } compactTrailing: {
-                Text(Date().addingTimeInterval(context.state.currentLap), style: .timer)
-                    .multilineTextAlignment(.center)
-                    .frame(width: 40)
-                    .font(.caption2)
+                Label {
+                    Text("\(Int(context.state.currentLap))/\(Int(context.attributes.totalLap))")
+                        .multilineTextAlignment(.center)
+                        .frame(width: 40)
+                        .font(.caption2)
+                } icon: {
+                    Image(systemName: "flag.checkered")
+                }
             } minimal: {
                 VStack(alignment: .center) {
-                    Image(systemName: "timer")
-                    Text(Date().addingTimeInterval(context.state.currentLap), style: .timer)
-                        .multilineTextAlignment(.center)
-                        .monospacedDigit()
-                        .font(.caption2)
+                    Label("\(context.state.driverName)", systemImage: "1.circle")
+                        .font(.title2)
                 }
             }
             .keylineTint(.cyan)
